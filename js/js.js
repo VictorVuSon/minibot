@@ -1,4 +1,16 @@
 let me = {};
+let quickReplyMessage = `
+    <h4>How may I help you today?</h4>
+    <div class="clear"></div>
+    <span><a href="">I want to buy Insurance</a></span>
+    <span><a href="">Edit profile</a></span>
+    <span><a href="">FAQ</a></span>
+
+`;
+let buttonMessage = `
+    <span>Family</span>
+    <span>Individual</span>
+`;
 me.avatar = "https://rawgit.com/VictorVuSon/minibot/master/images/serene.png";
 
 let you = {};
@@ -29,7 +41,7 @@ function init() {
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "https://rawgit.com/VictorVuSon/minibot/master/css/style.css"
+		href: "css/style.css"
 	}).appendTo("head");
 	let frame = `
     <div class="serene-box">
@@ -43,6 +55,7 @@ function init() {
                 </div>
             </div>
         </div>
+
     </div>
     <div class = 'clear'></div>
 	<img src = 'https://rawgit.com/VictorVuSon/minibot/master/images/serene.png' class="serene-button" />
@@ -50,45 +63,70 @@ function init() {
 	$('#serene-main').append(frame);
 }
 
-function formatAMPM(date) {
-	let hours = date.getHours();
-	let minutes = date.getMinutes();
-	let ampm = hours >= 12 ? 'PM' : 'AM';
-	hours = hours % 12;
-	hours = hours ? hours : 12; // the hour '0' should be '12'
-	minutes = minutes < 10 ? '0' + minutes : minutes;
-	return hours + ':' + minutes + ' ' + ampm;
-}
-
 //-- No use time. It is a javaScript effect.
-function insertChat(who, text, time = 0) {
+function insertChat(who, type, text, time = 0) {
 	let control = "";
-	let date = formatAMPM(new Date());
-	if (who === "me") {
-		control = `<li style="width:100%">
+	switch (type) {
+		case 0:
+			if (who === "me") {
+				control = `<li>
 			<div class="msj macro">
-			<div class="avatar"><img class="img-circle" style="width:100%;" src="${me.avatar}" /></div>
-			<div class="text text-l">
-			<p>${text}</p>
-			<p><small>${date}</small></p>
-			</div>
-			</div>
-			</li>`;
-	} else {
-		control = `<li style="width:100%;">
-			<div class="msj-rta macro">
+			<div class="avatar"><img class="img-circle" style="width:50px;" src="${me.avatar}" /></div>
 			<div class="text text-r">
 			<p>${text}</p>
-			<p><small>${date}</small></p>
 			</div>
-			<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src=" ${you.avatar}" /></div>
+			</div>
 			</li>`;
+			} else {
+				control = `<li style="width:100%;">
+			<div class="msj-rta macro">
+			<div class="text text-l">
+			<p>${text}</p>
+			</div>
+			<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:50px;" src=" ${you.avatar}" /></div>
+			</li>`;
+			}
+			break;
+		case 1:
+			control = `<li>
+			<div class="msj macro">
+			<div class="avatar"><img class="img-circle" style="width:50px;" src="${me.avatar}" /></div>
+			<div class="quickReply">
+			${quickReplyMessage}
+			</div>
+			</div>
+			</li>`;
+			break;
+		case 2:
+			control = `<li>
+			<div class="msj macro">
+			<div class="avatar"><img class="img-circle" style="width:50px;" src="${me.avatar}" /></div>
+			<div class="button-message">
+			<p>${text}</p>
+			${buttonMessage}
+			</div>
+			</div>
+			</li>`;
+			break;
+		case 3:
+			control = `<li style="width:100%;">
+			<div class="msj-rta macro">
+			<div class="text text-l">
+			<img style="width: 215px" src="images/calendar.png" />
+			<div class="text text-l">
+			<p style="color: #727db7;text-align: center;margin-top: 10px;">${text}</p>
+			</div>
+			</div>
+			<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:50px;" src=" ${you.avatar}" /></div>
+			</li>`;
+			break;
 	}
 	setTimeout(
 		function () {
 			$("ul").append(control);
+			let elem = document.getElementById('serene-scrollbar');
+			elem.scrollTop = elem.scrollHeight;
 		}, time);
-
 }
 
 function resetChat() {
@@ -109,16 +147,21 @@ $(".mytext").on("keyup", function (e) {
 resetChat();
 
 //-- Print Messages
-function letChat (isExisted) {
-	if (!isExisted) {
-		insertChat("me", "Hello I'm Serene, may I help you!", 0);
-		insertChat("you", "Hi, I want to buy travel insurance.", 1500);
-		insertChat("me", "What kind of trip do you want?", 3500);
-		insertChat("you", "Individual", 7000);
-		insertChat("me", "How many children will be with you on this trip?", 9500);
-		insertChat("you", "2", 12000);
-	} else {
-
-	}
-
+function letChat(isExisted) {
+		resetChat();
+		insertChat("me", 0, "Hello I'm Serene, your personal assistant.", 1000);
+		insertChat("me", 0, `You can ask me a question regarding insurance, such as: "Does the Insurance cover dental expense?". I will be glad to answer you . Ok, let's start!`, 1000);
+		insertChat("me", 1, "", 1000);
+		insertChat("you", 0, "Hi, I want to buy travel insurance.", 3000);
+		insertChat("me", 2, "Ok, you can choose an Individual or Family plan", 4500);
+		insertChat("you", 0, "Individual", 5500);
+		insertChat("me", 0, "How many travellers are travelling?", 7000);
+		insertChat("you", 0, "2", 8000);
+		insertChat("me", 0, "Which country or city are you travelling to", 9500);
+		insertChat("you", 0, "Singapore", 11000);
+		insertChat("me", 0, "When will you leave?", 13000);
+		insertChat("you", 3, "06-20-2014", 15000);
+		insertChat("me", 0, "When will you back?", 16000);
+		insertChat("you", 3, "06-20-2014", 18000);
+		insertChat("me", 0, `Alright, you wil travel to <a href="">Singapore</a> from <a href=''>06-20-2014</a> to <a href=''>06-20-2014</a>.`, 20000);
 }

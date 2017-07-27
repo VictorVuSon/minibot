@@ -8,16 +8,24 @@
     width:75%;display:flex;flex-direction:column;
 }
 .text > p:first-of-type{
-    width:100%;margin-top:0;margin-bottom:auto;line-height: 13px;font-size: 12px;
+    width:100%;
+    margin-top:0;
+    margin-bottom:auto;
+    line-height: 19px;
+    font-size: 15px;
 }
 .text > p:last-of-type{
-    width:100%;text-align:right;color:silver;margin-bottom:-7px;margin-top:auto;
+    width:100%;
+    text-align: left;
+    margin-top:auto;
 }
 .text-l{
-    float:left;padding-right:10px;
-}        
+    float:left;
+    padding-left: 20px;
+}
 .text-r{
-    float:right;padding-left:10px;
+    float:right;
+    padding-left:10px;
 }
 .avatar{
     display:flex;
@@ -45,7 +53,7 @@
 .frame > div:last-of-type{
     position:absolute;bottom:5px;width:100%;display:flex;
 }
-ul {
+#serene-main ul {
     width:100%;
     list-style-type: none;
     padding:18px;
@@ -53,6 +61,8 @@ ul {
     bottom:32px;
     display:flex;
     flex-direction: column;
+    height: 410px;
+    overflow: auto;
 
 }
 .msj:before{
@@ -64,7 +74,7 @@ ul {
     position:relative;
     border-style: solid;
     border-width: 0 13px 13px 0;
-    border-color: transparent #ffffff transparent transparent;            
+    border-color: transparent #ffffff transparent transparent;
 }
 .msj-rta:after{
     width: 0;
@@ -75,11 +85,11 @@ ul {
     position:relative;
     border-style: solid;
     border-width: 13px 13px 0 0;
-    border-color: whitesmoke transparent transparent transparent;           
-}  
+    border-color: whitesmoke transparent transparent transparent;
+}
 input:focus{
     outline: none;
-}        
+}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #d4d4d4;
 }
@@ -98,9 +108,29 @@ input:focus{
 }
 
 #serene-main {
-    margin: auto;
-    width: 352px;
+    width: 420px;
+    margin: 10px auto;
 }
 .clear {
     clear: both;
+}
+.quickReply {border: 1px solid #bbb;background-color: white;border-radius: 8px;list-style: none;border-bottom-left-radius: 0px;width: 100%;}
+.quickReply h4 {background-color: rgba(206, 206, 206, 0.25);padding: 10px 0px 12px 7px;float: left;margin-top: 0px;font-size: 15px;border-radius: 5px 5px 0px 0px;width: 100%;margin-bottom: 0px;}
+.quickReply span {
+    display: block;
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid #bbb;
+}
+.quickReply span:last-child {
+    border-bottom: none;
+}
+.quickReply span:first-child {
+}
+.button-message {margin: 10px 0px;}
+.button-message span {
+    border: 1px solid #3b92ef;
+    border-radius: 25px;
+    padding: 6px 25px;
+    color: #3b92ef;
 }
