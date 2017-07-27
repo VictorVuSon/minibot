@@ -45,7 +45,7 @@ function init() {
         </div>
     </div>
     <div class = 'clear'></div>
-	<img src = 'https://rawgit.com/VictorVuSon/minibot/master/images/keith.png' class="serene-button" />
+	<img src = 'https://rawgit.com/VictorVuSon/minibot/master/images/serene.png' class="serene-button" />
 `;
 	$('#serene-main').append(frame);
 }
