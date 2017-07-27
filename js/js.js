@@ -24,12 +24,7 @@ function init() {
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "css/style.css"
-	}).appendTo("head");
-	$("<link/>", {
-		rel: "stylesheet",
-		type: "text/css",
-		href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		href: "https://cdn.rawgit.com/VictorVuSon/minibot/79398a5f/css/style.css"
 	}).appendTo("head");
 	$("<link/>", {
 		rel: "stylesheet",
@@ -38,7 +33,7 @@ function init() {
 	}).appendTo("head");
 	let frame = `
     <div class="serene-box">
-        <div class="col-sm-3 frame">
+        <div class="col-sm-12 frame">
             <ul id="serene-scrollbar"></ul>
             <div>
                 <div class="msj-rta macro" style="margin:auto">

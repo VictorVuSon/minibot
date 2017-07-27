@@ -96,6 +96,11 @@ input:focus{
     border-radius: 50%;
     width: 60px;
 }
+
+#serene-main {
+    margin: auto;
+    width: 352px;
+}
 .clear {
     clear: both;
 }
