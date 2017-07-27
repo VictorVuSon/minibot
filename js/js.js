@@ -1,8 +1,8 @@
 let me = {};
-me.avatar = "images/serene.png";
+me.avatar = "https://rawgit.com/VictorVuSon/minibot/master/images/serene.png";
 
 let you = {};
-you.avatar = "images/keith.png";
+you.avatar = "https://rawgit.com/VictorVuSon/minibot/master/images/keith.png";
 
 init();
 
@@ -24,12 +24,12 @@ function init() {
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "https://cdn.rawgit.com/VictorVuSon/minibot/79398a5f/css/style.css"
+		href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	}).appendTo("head");
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		href: "https://rawgit.com/VictorVuSon/minibot/master/css/style.css"
 	}).appendTo("head");
 	let frame = `
     <div class="serene-box">
