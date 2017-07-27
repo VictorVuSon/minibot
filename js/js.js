@@ -41,7 +41,7 @@ function init() {
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "css/style.css"
+		href: "https://rawgit.com/VictorVuSon/minibot/master/css/style.css"
 	}).appendTo("head");
 	let frame = `
     <div class="serene-box">
