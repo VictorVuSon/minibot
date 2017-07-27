@@ -163,5 +163,5 @@ function letChat(isExisted) {
 		insertChat("you", 3, "06-20-2014", 15000);
 		insertChat("me", 0, "When will you back?", 16000);
 		insertChat("you", 3, "06-20-2014", 18000);
-		insertChat("me", 0, `Alright, you wil travel to <a href="">Singapore</a> from <a href=''>06-20-2014</a> to <a href=''>06-20-2014</a>.`, 20000);
+		insertChat("me", 0, `Alright, you will travel to <a href="">Singapore</a> from <a href=''>06-20-2014</a> to <a href=''>06-20-2014</a>.`, 20000);
 }
