@@ -112,7 +112,7 @@ function insertChat(who, type, text, time = 0) {
 			control = `<li style="width:100%;">
 			<div class="msj-rta macro">
 			<div class="text text-l">
-			<img style="width: 215px" src="images/calendar.png" />
+			<img style="width: 215px" src="https://rawgit.com/VictorVuSon/minibot/master/images/calendar.png" />
 			<div class="text text-l">
 			<p style="color: #727db7;text-align: center;margin-top: 10px;">${text}</p>
 			</div>
