@@ -45,10 +45,9 @@ function init() {
         </div>
     </div>
     <div class = 'clear'></div>
-	<img src = 'images/serene.png' class="serene-button" />
+	<img src = 'https://rawgit.com/VictorVuSon/minibot/master/images/keith.png' class="serene-button" />
 `;
 	$('#serene-main').append(frame);
-	$('#serene-scrollbar').animate({scrollTop: $('#serene-scrollbar').prop("scrollHeight")}, 500);
 }
 
 function formatAMPM(date) {
