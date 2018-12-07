@@ -11,10 +11,10 @@ let buttonMessage = `
     <span>Family</span>
     <span>Individual</span>
 `;
-me.avatar = "https://rawgit.com/VictorVuSon/minibot/master/images/serene.png";
+me.avatar = "https://cdn.jsdelivr.net/gh/VictorVuSon/minibot/images/serene.png";
 
 let you = {};
-you.avatar = "https://rawgit.com/VictorVuSon/minibot/master/images/keith.png";
+you.avatar = "https://cdn.jsdelivr.net/gh/VictorVuSon/minibot/images/keith.png";
 
 init();
 
@@ -41,7 +41,7 @@ function init() {
 	$("<link/>", {
 		rel: "stylesheet",
 		type: "text/css",
-		href: "https://rawgit.com/VictorVuSon/minibot/master/css/style.css"
+		href: "https://cdn.jsdelivr.net/gh/VictorVuSon/minibot/css/style.css"
 	}).appendTo("head");
 	let frame = `
     <div class="serene-box">
@@ -112,7 +112,7 @@ function insertChat(who, type, text, time = 0) {
 			control = `<li style="width:100%;">
 			<div class="msj-rta macro">
 			<div class="text text-l">
-			<img style="width: 215px" src="https://rawgit.com/VictorVuSon/minibot/master/images/calendar.png" />
+			<img style="width: 215px" src="https://cdn.jsdelivr.net/gh/VictorVuSon/minibot/images/calendar.png" />
 			<div class="text text-l">
 			<p style="color: #727db7;text-align: center;margin-top: 10px;">${text}</p>
 			</div>
